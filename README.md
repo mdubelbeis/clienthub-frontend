@@ -99,14 +99,22 @@ Login → Dashboard → Clients → Client Detail → Activities
 
 ## 🧱 Tech Stack
 
-| Category        | Technology |
-|----------------|-----------|
-| Framework      | React (Vite) |
-| Language       | TypeScript |
-| Routing        | React Router v6 |
-| State Mgmt     | React Query (TanStack) |
-| HTTP Client    | Axios |
-| Styling        | Tailwind CSS (or equivalent) |
+### Frontend Core
+- React (Vite)
+- TypeScript
+- React Router v6
+
+### State & Data
+- React Query (TanStack Query)
+- Axios
+
+### UI & Styling
+- Tailwind CSS (or equivalent styling approach)
+
+### Tooling
+- Vite
+- ESLint
+- Prettier (optional)
 
 ---
 
