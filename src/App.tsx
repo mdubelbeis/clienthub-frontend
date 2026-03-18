@@ -4,6 +4,7 @@ import DashboardPage from './pages/DashboardPage';
 import ClientsPage from './pages/ClientsPage';
 import ClientDetailPage from './pages/ClientDetailPage';
 
+
 function App() {
   return (
     <BrowserRouter>
