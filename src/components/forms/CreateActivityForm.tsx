@@ -7,7 +7,7 @@ export default function CreateActivityForm({ clientId }: { clientId: string }) {
   const [type, setType] = useState('');
   const [notes, setNotes] = useState('');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: React.SubmitEvent) => {
     e.preventDefault();
 
     if (!type || !notes) return;
@@ -22,7 +22,7 @@ export default function CreateActivityForm({ clientId }: { clientId: string }) {
     <form onSubmit={handleSubmit} className='space-y-2'>
       <input
         className='border p-2 w-full'
-        placeholder='Activity Type'
+        placeholder='[NOTE, MEETING, EMAIL, TASK, CALL]'
         value={type}
         onChange={(e) => setType(e.target.value)}
       />
