@@ -15,14 +15,18 @@ export default function AppLayout() {
       <aside className='w-64 h-screen bg-gray-900 text-white p-4'>
         <h2 className='text-xl font-bold mb-4'>ClientHub</h2>
 
-        <nav className='space-y-2'>
-          <Link to='/dashboard'>Dashboard</Link>
-          <Link to='/clients'>Clients</Link>
+        <nav className='space-y-2 space-x-2 text-blue-400'>
+          <Link className='hover:text-blue-600' to='/dashboard'>
+            Dashboard
+          </Link>
+          <Link className='hover:text-blue-600' to='/clients'>
+            Clients
+          </Link>
         </nav>
 
         <button
           onClick={handleLogout}
-          className='mt-6 bg-red-500 px-3 py-2 rounded'
+          className='mt-6 bg-blue-600 px-3 py-2 rounded hover:bg-blue-800'
         >
           Logout
         </button>
