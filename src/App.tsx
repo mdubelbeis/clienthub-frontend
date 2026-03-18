@@ -4,6 +4,7 @@ import DashboardPage from './pages/DashboardPage';
 import ClientsPage from './pages/ClientsPage';
 import ClientDetailPage from './pages/ClientDetailPage';
 import ProtectedRoute from './components/ProtectedRoute';
+import AppLayout from './components/layout/AppLayout';
 
 
 function App() {
@@ -15,9 +16,11 @@ function App() {
 
         {/* Protected Routes */}
         <Route element={<ProtectedRoute />}>
-          <Route path='/dashboard' element={<DashboardPage />} />
-          <Route path='/clients' element={<ClientsPage />} />
-          <Route path='/clients/:id' element={<ClientDetailPage />} />
+          <Route element={<AppLayout />}>
+            <Route path='/dashboard' element={<DashboardPage />} />
+            <Route path='/clients' element={<ClientsPage />} />
+            <Route path='/clients/:id' element={<ClientDetailPage />} />
+          </Route>
         </Route>
       </Routes>
     </BrowserRouter>
