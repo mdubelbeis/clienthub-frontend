@@ -109,12 +109,12 @@ Login → Dashboard → Clients → Client Detail → Activities
 - Axios
 
 ### UI & Styling
-- Tailwind CSS (or equivalent styling approach)
+- Tailwind CSS
 
 ### Tooling
 - Vite
 - ESLint
-- Prettier (optional)
+- Prettier
 
 ---
 
@@ -211,7 +211,7 @@ Backend repository available separately if needed.
 
 ⸻
 
-UX Improvements
+### UX Improvements
 	•	Toast notifications (success/error)
 	•	Loading skeletons
 	•	Improved visual design (cards/tables)
