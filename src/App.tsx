@@ -1,10 +1,19 @@
-import './App.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import LoginPage from './pages/LoginPage';
+import DashboardPage from './pages/DashboardPage';
+import ClientsPage from './pages/ClientsPage';
+import ClientDetailPage from './pages/ClientDetailPage';
 
 function App() {
   return (
-    <>
-      <h1 className='text-green-500'>Hello world</h1>
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<LoginPage />} />
+        <Route path='/dashboard' element={<DashboardPage />} />
+        <Route path='/clients' element={<ClientsPage />} />
+        <Route path='/clients/:id' element={<ClientDetailPage />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
