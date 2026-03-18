@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import CreateClientForm from '../components/forms/CreateClientForm';
 import { useClients } from '../features/clients/hooks/useClients';
 
@@ -18,9 +19,15 @@ export default function ClientsPage() {
           <div>No clients yet</div>
         ) : (
           data?.map((client) => (
-            <li key={client.id} className='border p-2 mb-2'>
-              {client.name} - {client.email}
-            </li>
+            <div key={client.id} className='border p-2 mb-2'>
+              <Link
+                to={`/clients/${client.id}`}
+                className='text-purple-600 underline'
+              >
+                {client.name}
+              </Link>
+              <div className='text-sm text-gray-600'>{client.email}</div>
+            </div>
           ))
         )}
       </ul>
