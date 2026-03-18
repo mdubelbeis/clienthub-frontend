@@ -7,7 +7,6 @@ export const useCreateClient = () => {
   return useMutation({
     mutationFn: createClient,
     onSuccess: () => {
-      console.log('INVALIDATING CLIENTS');
       queryClient.invalidateQueries({ queryKey: ['clients'] });
     },
   });
