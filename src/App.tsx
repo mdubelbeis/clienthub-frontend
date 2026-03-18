@@ -1,18 +1,24 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import LoginPage from './pages/LoginPage';
+import LoginWrapper from './pages/LoginWrapper';
 import DashboardPage from './pages/DashboardPage';
 import ClientsPage from './pages/ClientsPage';
 import ClientDetailPage from './pages/ClientDetailPage';
+import ProtectedRoute from './components/ProtectedRoute';
 
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path='/' element={<LoginPage />} />
-        <Route path='/dashboard' element={<DashboardPage />} />
-        <Route path='/clients' element={<ClientsPage />} />
-        <Route path='/clients/:id' element={<ClientDetailPage />} />
+        {/* Public Route */}
+        <Route path='/' element={<LoginWrapper />} />
+
+        {/* Protected Routes */}
+        <Route element={<ProtectedRoute />}>
+          <Route path='/dashboard' element={<DashboardPage />} />
+          <Route path='/clients' element={<ClientsPage />} />
+          <Route path='/clients/:id' element={<ClientDetailPage />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   );
