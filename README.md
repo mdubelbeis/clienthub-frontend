@@ -1,24 +1,3 @@
-# 🚀 Optional (HIGH IMPACT ADD)
-
-If you want to go elite:
-
-### Add this section at top:
-
-```md
-## 📸 Screenshots
-
-🔥 Good — now we’re going from “solid project” → “hire this guy” signal.
-
-This version is designed to:
-	•	hook recruiters in the first 5 seconds
-	•	clearly show value
-	•	highlight your thinking, not just features
-	•	feel like a real product, not a school project
-
-⸻
-
-🚀 RECRUITER-OPTIMIZED README
-
 # ClientHub Frontend (React CRM UI)
 
 A production-style React application that consumes a secure backend API to manage clients and track client interactions.
