@@ -10,7 +10,11 @@ export const createActivity = async (
   clientId: string,
   data: Partial<Activity>,
 ): Promise<Activity> => {
-  data.type = data.type?.toUpperCase();
-  const res = await api.post(`/api/clients/${clientId}/activities`, data);
+  const payload = {
+    ...data,
+    type: data.type?.toUpperCase(),
+  };
+
+  const res = await api.post(`/api/clients/${clientId}/activities`, payload);
   return res.data;
 };
