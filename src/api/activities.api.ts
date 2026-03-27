@@ -3,7 +3,7 @@ import api from './axios';
 
 export const getActivities = async (clientId: string): Promise<Activity[]> => {
   const res = await api.get(`/api/clients/${clientId}/activities`);
-  return res.data.content; // assuming Page<>
+  return res.data.content;
 };
 
 export const createActivity = async (

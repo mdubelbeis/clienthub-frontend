@@ -10,3 +10,8 @@ export const createClient = async (data: Partial<Client>): Promise<Client> => {
   const response = await api.post('api/clients', data);
   return response.data.content;
 };
+
+export const getClientById = async (clientId: string) => {
+  const response = await api.get(`api/clients/${clientId}}`);
+  return response.data;
+};
