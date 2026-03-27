@@ -102,7 +102,7 @@ export default function ClientDetailPage() {
           </div>
         ) : (
           <ul className='space-y-3'>
-            {activities.map((activity) => (
+            {activities?.map((activity) => (
               <li
                 key={activity.id}
                 className='rounded-xl border border-slate-800 bg-slate-950 p-4'
