@@ -11,21 +11,24 @@ export default function ClientsPage() {
   return (
     <div>
       <h1 className='text-2xl font-bold mb-4'>Clients</h1>
+
       <div className='bg-white shadow p-4 mb-6 rounded'>
         <CreateClientForm />
       </div>
+
       <ul>
         {!data?.length ? (
           <div>No clients yet</div>
         ) : (
-          data?.map((client) => (
+          data.map((client) => (
             <div key={client.id} className='border p-2 mb-2'>
               <Link
-                to={`api/clients/${client.id}`}
+                to={`/clients/${client.id}`}
                 className='text-purple-600 underline'
               >
                 {client.name}
               </Link>
+
               <div className='text-sm text-gray-600'>{client.email}</div>
             </div>
           ))
