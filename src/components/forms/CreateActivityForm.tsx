@@ -11,7 +11,7 @@ export default function CreateActivityForm({ clientId }: { clientId: string }) {
   const [type, setType] = useState<ActivityType>('NOTE');
   const [notes, setNotes] = useState('');
 
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  function handleSubmit(e: React.SubmitEvent<HTMLFormElement>) {
     e.preventDefault();
 
     if (!notes.trim()) return;
