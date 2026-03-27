@@ -39,8 +39,8 @@ export default function ClientDetailPage() {
     <div className='space-y-6'>
       <div className='flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between'>
         <div>
-          <h1 className='text-3xl font-bold text-white'>Client Activities</h1>
-          <p className='mt-2 text-sm text-slate-400'>
+          <h1 className='text-3xl font-bold'>Client Activities</h1>
+          <p className='mt-2 text-sm text-slate-800g'>
             Track interactions, log notes, and maintain a timeline for this
             client relationship.
           </p>
