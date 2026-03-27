@@ -73,7 +73,7 @@ export default function LoginPage() {
             value={formData.email}
             onChange={handleChange}
             required
-            placeholder='you@example.com'
+            placeholder='admin@clienthub.com'
             className='w-full rounded-xl border border-slate-700 bg-slate-950 px-4 py-3 text-sm text-white placeholder:text-slate-500 focus:border-sky-400 focus:outline-none focus:ring-4 focus:ring-sky-400/10'
           />
         </div>
@@ -92,7 +92,7 @@ export default function LoginPage() {
             value={formData.password}
             onChange={handleChange}
             required
-            placeholder='Enter your password'
+            placeholder='admin'
             className='w-full rounded-xl border border-slate-700 bg-slate-950 px-4 py-3 text-sm text-white placeholder:text-slate-500 focus:border-sky-400 focus:outline-none focus:ring-4 focus:ring-sky-400/10'
           />
         </div>
