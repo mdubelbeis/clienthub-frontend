@@ -21,7 +21,7 @@ export default function ClientsPage() {
           data?.map((client) => (
             <div key={client.id} className='border p-2 mb-2'>
               <Link
-                to={`api/clients/${client.id}`}
+                to={`api/clients/${client.id}/activities`}
                 className='text-purple-600 underline'
               >
                 {client.name}
