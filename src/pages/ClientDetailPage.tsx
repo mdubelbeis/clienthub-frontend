@@ -2,6 +2,8 @@ import { useParams } from 'react-router-dom';
 import { useActivities } from '../features/activities/hooks/useActivities';
 import CreateActivityForm from '../components/forms/CreateActivityForm';
 import { useClient } from '../hooks/useClient';
+import { getActivityTypeClasses } from '../utils/activityTypeStyles';
+
 
 export default function ClientDetailPage() {
   const { id } = useParams();
@@ -40,7 +42,7 @@ export default function ClientDetailPage() {
       <div className='flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between'>
         <div>
           <h1 className='text-3xl font-bold'>Client Activities</h1>
-          <p className='mt-2 text-sm text-slate-800g'>
+          <p className='mt-2 text-sm text-slate-400'>
             Track interactions, log notes, and maintain a timeline for this
             client relationship.
           </p>
@@ -108,7 +110,11 @@ export default function ClientDetailPage() {
               >
                 <div className='flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between'>
                   <div>
-                    <div className='inline-flex rounded-full border border-sky-500/20 bg-sky-500/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-sky-300'>
+                    <div
+                      className={`inline-flex rounded-full border px-3 py-1 text-xs font-semibold uppercase tracking-wide ${getActivityTypeClasses(
+                        activity.type,
+                      )}`}
+                    >
                       {activity.type}
                     </div>
 
