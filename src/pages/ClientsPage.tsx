@@ -2,9 +2,11 @@ import axios from 'axios';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import ConfirmDeleteModal from '../components/modals/ConfirmDeleteModal';
+import EditClientModal from '../components/modals/EditClientModal';
 import CreateClientForm from '../components/forms/CreateClientForm';
 import { useClients } from '../features/clients/hooks/useClients';
 import { useDeleteClient } from '../hooks/useDeleteClient';
+import type { Client } from '../types/client.types';
 
 interface PendingDeleteClient {
   id: string;
@@ -14,8 +16,10 @@ interface PendingDeleteClient {
 export default function ClientsPage() {
   const { data: clients = [], isLoading, isError } = useClients();
   const deleteClientMutation = useDeleteClient();
+
   const [pendingDeleteClient, setPendingDeleteClient] =
     useState<PendingDeleteClient | null>(null);
+  const [editingClient, setEditingClient] = useState<Client | null>(null);
 
   const handleOpenDeleteModal = (clientId: string, clientName: string) => {
     deleteClientMutation.reset();
@@ -39,6 +43,14 @@ export default function ClientsPage() {
         setPendingDeleteClient(null);
       },
     });
+  };
+
+  const handleOpenEditModal = (client: Client) => {
+    setEditingClient(client);
+  };
+
+  const handleCloseEditModal = () => {
+    setEditingClient(null);
   };
 
   const deleteErrorMessage = (() => {
@@ -95,20 +107,34 @@ export default function ClientsPage() {
                       </Link>
 
                       <div className='text-sm text-gray-600'>
-                        {client.email}
+                        {client.email || '—'}
+                      </div>
+
+                      <div className='text-sm text-gray-600'>
+                        {client.phone || '—'}
                       </div>
                     </div>
 
-                    <button
-                      type='button'
-                      onClick={() =>
-                        handleOpenDeleteModal(client.id, client.name)
-                      }
-                      disabled={deleteClientMutation.isPending}
-                      className='rounded bg-red-600 px-3 py-1.5 text-sm font-medium text-white transition hover:bg-red-500 disabled:cursor-not-allowed disabled:bg-gray-400'
-                    >
-                      {isDeleting ? 'Deleting...' : 'Delete'}
-                    </button>
+                    <div className='flex gap-2'>
+                      <button
+                        type='button'
+                        onClick={() => handleOpenEditModal(client)}
+                        className='rounded bg-blue-600 px-3 py-1.5 text-sm font-medium text-white transition hover:bg-blue-500'
+                      >
+                        Edit
+                      </button>
+
+                      <button
+                        type='button'
+                        onClick={() =>
+                          handleOpenDeleteModal(client.id, client.name)
+                        }
+                        disabled={deleteClientMutation.isPending}
+                        className='rounded bg-red-600 px-3 py-1.5 text-sm font-medium text-white transition hover:bg-red-500 disabled:cursor-not-allowed disabled:bg-gray-400'
+                      >
+                        {isDeleting ? 'Deleting...' : 'Delete'}
+                      </button>
+                    </div>
                   </div>
                 </li>
               );
@@ -127,6 +153,13 @@ export default function ClientsPage() {
           errorMessage={deleteErrorMessage}
           onConfirm={handleConfirmDelete}
           onCancel={handleCloseDeleteModal}
+        />
+      )}
+
+      {editingClient && (
+        <EditClientModal
+          client={editingClient}
+          onClose={handleCloseEditModal}
         />
       )}
     </>

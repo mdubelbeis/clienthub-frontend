@@ -19,3 +19,11 @@ export const getClientById = async (clientId: string) => {
 export const deleteClient = async (clientId: string): Promise<void> => {
   await api.delete(`/api/clients/${clientId}`);
 };
+
+export const updateClient = async (
+  clientId: string,
+  data: Partial<Client>,
+): Promise<Client> => {
+  const response = await api.put(`/api/clients/${clientId}`, data);
+  return response.data;
+};
