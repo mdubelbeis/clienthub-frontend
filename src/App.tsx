@@ -3,6 +3,7 @@ import LoginWrapper from './pages/LoginWrapper';
 import DashboardPage from './pages/DashboardPage';
 import ClientsPage from './pages/ClientsPage';
 import ClientDetailPage from './pages/ClientDetailPage';
+import ReportsPage from './pages/ReportsPage';
 import ProtectedRoute from './components/ProtectedRoute';
 import AppLayout from './components/layout/AppLayout';
 import AuthLayout from './components/layout/AuthLayout';
@@ -26,6 +27,7 @@ function App() {
             <Route path='/dashboard' element={<DashboardPage />} />
             <Route path='/clients' element={<ClientsPage />} />
             <Route path='/clients/:id' element={<ClientDetailPage />} />
+            <Route path='/reports' element={<ReportsPage />} />
           </Route>
         </Route>
       </Routes>
