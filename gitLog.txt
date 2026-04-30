@@ -1,374 +1,73 @@
-commit a0e9061a8621e54a1ec8ec4159c67f9cb76185e4
-Merge: c9b863e 7342dc8
-Author: Mason Jeffrey Dubelbeis <Mason.Dubelbeis@gmail.com>
-Date:   Mon Apr 20 20:25:59 2026 -0500
-
-    Merge local to Gitlab
-
-commit 7342dc83d9bdb796f35c263717a231e60a9d0295
-Author: Mason Jeffrey Dubelbeis <mason.dubelbeis@gmail.com>
-Date:   Mon Apr 20 23:03:40 2026 +0000
-
-    Initial commit
-
-commit c9b863e8ab41e4bc9953cb228f4748fab74b986b
-Merge: 7161824 142ceae
-Author: Mason Jeffrey Dubelbeis <Mason.Dubelbeis@gmail.com>
-Date:   Wed Apr 8 14:23:48 2026 -0500
-
-    Merge pull request #3 from mdubelbeis/bug/create-client-form
-    
-    bug: return structured validation errors from backend
-
-commit 142ceae47573e808239b62f3ae4a19156d5f4286
-Author: Mason Jeffrey Dubelbeis <Mason.Dubelbeis@gmail.com>
-Date:   Wed Apr 8 14:08:58 2026 -0500
-
-    bug: return structured validation errors from backend
-
-commit 716182413ac95e8cab76aef0ad2cd058f7969cd3
-Merge: 3dd6935 4760e5b
-Author: Mason Jeffrey Dubelbeis <Mason.Dubelbeis@gmail.com>
-Date:   Wed Apr 8 13:51:24 2026 -0500
-
-    Merge pull request #2 from mdubelbeis/feat/delete-client
-    
-    feat: delete Client
-
-commit 4760e5b333c5cb904b60f04ef622b826e29b092c
-Author: Mason Jeffrey Dubelbeis <Mason.Dubelbeis@gmail.com>
-Date:   Wed Apr 8 13:41:09 2026 -0500
-
-    feat: delete Client
-
-commit 3dd693534e7ee4df7629d530bc451c463f7fc7fa
-Merge: c9fb8af 4db7f2b
-Author: Mason Jeffrey Dubelbeis <Mason.Dubelbeis@gmail.com>
-Date:   Wed Apr 8 11:33:34 2026 -0500
-
-    Merge pull request #1 from mdubelbeis/feat/update-client-task
-    
-    Feat/update client task
-
-commit 4db7f2b8cb6406fb9b9650032c839734bc1a4f67
-Author: Mason Jeffrey Dubelbeis <Mason.Dubelbeis@gmail.com>
-Date:   Wed Apr 8 11:17:32 2026 -0500
-
-    feat: add updated/complete to clients task
-
-commit 9ce7c5bfa2081887431baf03ef0080c7fea3e160
-Author: Mason Jeffrey Dubelbeis <Mason.Dubelbeis@gmail.com>
-Date:   Wed Apr 8 00:35:49 2026 -0500
-
-    docs: add local env
-
-commit c9fb8af61823678f6f7813938c13791d28f97e9d
-Author: Mason Jeffrey Dubelbeis <Mason.Dubelbeis@gmail.com>
-Date:   Fri Mar 27 19:06:44 2026 -0500
-
-    style: add conditional color on activity type
-
-commit 878c6723137402216af20d712077456faa60e702
-Author: Mason Jeffrey Dubelbeis <Mason.Dubelbeis@gmail.com>
-Date:   Fri Mar 27 18:14:59 2026 -0500
-
-    feat: placeholder for admin login
-
-commit 23dd0a385f1003ff5625cdc6c8ff229feb0d8700
-Author: Mason Jeffrey Dubelbeis <Mason.Dubelbeis@gmail.com>
-Date:   Fri Mar 27 18:13:07 2026 -0500
-
-    style: change header text color
-
-commit 76017183c9347df1fb03a7931af2fc9e9e0f54f0
-Author: Mason Jeffrey Dubelbeis <Mason.Dubelbeis@gmail.com>
-Date:   Fri Mar 27 18:10:20 2026 -0500
-
-    refactor: slims component down
-
-commit 7695ebce13f53c06e88f796b2318a83ef6c2ceb1
-Author: Mason Jeffrey Dubelbeis <Mason.Dubelbeis@gmail.com>
-Date:   Fri Mar 27 18:04:59 2026 -0500
-
-    fix: corrected route
-
-commit d03ebf364c6fd04e8f4b6c1a71d6bc027d7226ee
-Author: Mason Jeffrey Dubelbeis <Mason.Dubelbeis@gmail.com>
-Date:   Fri Mar 27 18:03:03 2026 -0500
-
-    fix: incorrect urls
-
-commit f97139092cbf37ba08063c8ef592680903a75912
-Author: Mason Jeffrey Dubelbeis <Mason.Dubelbeis@gmail.com>
-Date:   Fri Mar 27 17:55:50 2026 -0500
-
-    fix: url
-
-commit b5ceb0e6b825d42a7e986c20e53f872d212cd63b
-Author: Mason Jeffrey Dubelbeis <Mason.Dubelbeis@gmail.com>
-Date:   Fri Mar 27 17:48:05 2026 -0500
-
-    fix: invalid url
-
-commit e18b8f0149705da1455769429ff586ba2f348c8a
-Author: Mason Jeffrey Dubelbeis <Mason.Dubelbeis@gmail.com>
-Date:   Fri Mar 27 17:46:37 2026 -0500
-
-    bug: add correct url
-
-commit 8629836121e112bcbfdbf364f08bfcc92c6b005f
-Author: Mason Jeffrey Dubelbeis <Mason.Dubelbeis@gmail.com>
-Date:   Fri Mar 27 17:43:03 2026 -0500
-
-    fix: refactored
-
-commit caa4ed19534c459fa04eb645c8f03e071977b438
-Author: Mason Jeffrey Dubelbeis <Mason.Dubelbeis@gmail.com>
-Date:   Fri Mar 27 17:37:11 2026 -0500
-
-    add: / in path
-
-commit f58073bf9a1f3ae944018d031196b7e447edbcfe
-Author: Mason Jeffrey Dubelbeis <Mason.Dubelbeis@gmail.com>
-Date:   Fri Mar 27 17:35:40 2026 -0500
-
-    fix: url
-
-commit 519cb2365eacd096849b3729df1e4270fe164b2a
-Author: Mason Jeffrey Dubelbeis <Mason.Dubelbeis@gmail.com>
-Date:   Fri Mar 27 17:33:09 2026 -0500
-
-    bug: removed extra }'
-
-commit d5c0d4eb362009d9de7e990231f57548a5132b03
-Author: Mason Jeffrey Dubelbeis <Mason.Dubelbeis@gmail.com>
-Date:   Fri Mar 27 17:30:50 2026 -0500
-
-    fix: url path
-
-commit a591c7ebf3488cc1e0e1d0552121f78872fcebdb
-Author: Mason Jeffrey Dubelbeis <Mason.Dubelbeis@gmail.com>
-Date:   Fri Mar 27 17:25:44 2026 -0500
-
-    fix: missing field
-
-commit 0f0c3ccec0c62e53736dcf4bc29fdd01b617ef40
-Author: Mason Jeffrey Dubelbeis <Mason.Dubelbeis@gmail.com>
-Date:   Fri Mar 27 17:21:38 2026 -0500
-
-    fix: api path
-
-commit b0337772d671a2538b2bf5495715cc2cbec95900
-Author: Mason Jeffrey Dubelbeis <Mason.Dubelbeis@gmail.com>
-Date:   Fri Mar 27 17:20:31 2026 -0500
-
-    fix: api path
-
-commit 5538ad805972a8d8a377b8b3a0655f649b27f1ae
-Author: Mason Jeffrey Dubelbeis <Mason.Dubelbeis@gmail.com>
-Date:   Fri Mar 27 17:16:23 2026 -0500
-
-    style: add better styling
-
-commit 242103ee00318d5180df2404f7ee17c7358786ed
-Author: Mason Jeffrey Dubelbeis <Mason.Dubelbeis@gmail.com>
-Date:   Fri Mar 27 16:58:19 2026 -0500
-
-    fix: api path
-
-commit 818b0bb767fd797da2dfb9bfb6784f7330d84a8d
-Author: Mason Jeffrey Dubelbeis <Mason.Dubelbeis@gmail.com>
-Date:   Fri Mar 27 14:50:30 2026 -0500
-
-    fix: corrected vercel deployment config for rewrites
-
-commit 4817c674383223e6cf5bfebb7039db49e36e6026
-Author: Mason Jeffrey Dubelbeis <Mason.Dubelbeis@gmail.com>
-Date:   Fri Mar 27 14:39:38 2026 -0500
-
-    fix: add Vercel config for host rewrite rule
-
-commit 6c77988d856e7af101d4c8d2ce99be93cd6b36ef
-Merge: d757438 4b493e0
-Author: Mason Jeffrey Dubelbeis <Mason.Dubelbeis@gmail.com>
-Date:   Fri Mar 27 14:06:28 2026 -0500
-
-    Merge branch 'feat/user-registration'
-    
-    feat: add user registration
-
-commit 4b493e07640eff592880fd139dda69f3924c2c99
-Author: Mason Jeffrey Dubelbeis <Mason.Dubelbeis@gmail.com>
-Date:   Fri Mar 27 14:05:41 2026 -0500
-
-    feat: add temp content to Dashboard
-
-commit 3f1c4b6908b34af4c39eceba98efbbeee402c8d2
-Author: Mason Jeffrey Dubelbeis <Mason.Dubelbeis@gmail.com>
-Date:   Fri Mar 27 13:57:29 2026 -0500
-
-    feat: add register user
-
-commit bd0cc49f2ae622439bb5b96bbb4f6b2786addb6a
-Author: Mason Jeffrey Dubelbeis <Mason.Dubelbeis@gmail.com>
-Date:   Fri Mar 27 12:39:38 2026 -0500
-
-    Add env url data
-
-commit d757438a9c8bb1e689c62c333442a3b5826c3ba7
-Author: Mason Jeffrey Dubelbeis <Mason.Dubelbeis@gmail.com>
-Date:   Fri Mar 20 14:24:07 2026 -0500
-
-    Remove optional section for recruiter-optimized README
-    
-    Removed optional high impact add section from README.
-
-commit bd2b5ea5f425185bbf90b3f9698e020d0c3c0d8f
-Author: Mason Jeffrey Dubelbeis <Mason.Dubelbeis@gmail.com>
-Date:   Wed Mar 18 18:54:18 2026 -0500
-
-    fix/docs: add subheader to header element
-
-commit d795b116c25401beffcd9037b4646c81a3a3dd6f
-Author: Mason Jeffrey Dubelbeis <Mason.Dubelbeis@gmail.com>
-Date:   Wed Mar 18 18:13:10 2026 -0500
-
-    docs: updated README - current project status
-
-commit 595bf05f0b5a65c1790fcca5c9a3971ad0f40261
-Author: Mason Jeffrey Dubelbeis <Mason.Dubelbeis@gmail.com>
-Date:   Wed Mar 18 18:12:53 2026 -0500
-
-    docs: updated README - current project status
-
-commit d59ca0e0de47fdee3a68f8e8f76eb35a93002689
-Author: Mason Jeffrey Dubelbeis <Mason.Dubelbeis@gmail.com>
-Date:   Wed Mar 18 17:44:21 2026 -0500
-
-    style: add space between links and hover effects
-
-commit 6871984ff78a3c565e48b67167bc963cb0606f05
-Author: Mason Jeffrey Dubelbeis <Mason.Dubelbeis@gmail.com>
-Date:   Wed Mar 18 17:25:27 2026 -0500
-
-    feat: add activity to client
-
-commit 0aad0a0cc85ce3211cf396e73224f4db855506ba
-Author: Mason Jeffrey Dubelbeis <Mason.Dubelbeis@gmail.com>
-Date:   Wed Mar 18 16:43:44 2026 -0500
-
-    feat: add activies flow
-
-commit 3dae81dfa7d159b02117f5a3053a9f317c4bf0be
-Author: Mason Jeffrey Dubelbeis <Mason.Dubelbeis@gmail.com>
-Date:   Wed Mar 18 16:31:44 2026 -0500
-
-    fix: removed phone from LoginRequest
-
-commit c6add0d36dd280a821f5b15a40fb5d71932627d9
-Author: Mason Jeffrey Dubelbeis <Mason.Dubelbeis@gmail.com>
-Date:   Wed Mar 18 16:26:51 2026 -0500
-
-    feat: add error handling for duplicate clients
-
-commit 6c1a12c2a4ed58580ecf3f612021e55ffc59c1a1
-Author: Mason Jeffrey Dubelbeis <Mason.Dubelbeis@gmail.com>
-Date:   Wed Mar 18 16:18:09 2026 -0500
-
-    feat: add AppLayout and /logout
-
-commit 56ff13cca27d1d6da2edd191e497a078837f1002
-Author: Mason Jeffrey Dubelbeis <Mason.Dubelbeis@gmail.com>
-Date:   Wed Mar 18 15:57:13 2026 -0500
-
-    fix: add content to return chain
-
-commit d36f6a2404897c5d60408eb8519ea6640e417e2b
-Author: Mason Jeffrey Dubelbeis <Mason.Dubelbeis@gmail.com>
-Date:   Wed Mar 18 15:22:02 2026 -0500
-
-    feat: POST /clients implemented
-
-commit 446097e0ad84b79bee8c6afcee852b51ae7b203c
-Author: Mason Jeffrey Dubelbeis <Mason.Dubelbeis@gmail.com>
-Date:   Wed Mar 18 14:37:02 2026 -0500
-
-    feat: login wrapper set up for redirects
-
-commit 5d62ac46bc383776cab06c386a52664bdb589efe
-Author: Mason Jeffrey Dubelbeis <Mason.Dubelbeis@gmail.com>
-Date:   Wed Mar 18 14:36:03 2026 -0500
-
-    fix: cleaned up component structure
-
-commit de72d7c0f0e30ed6cd5698a2862302f675a84987
-Author: Mason Jeffrey Dubelbeis <Mason.Dubelbeis@gmail.com>
-Date:   Wed Mar 18 14:35:15 2026 -0500
-
-    feat: set up protected/non-protected routes
-
-commit 562530d86475e3d5c2a175d4044d7807bd2061d4
-Author: Mason Jeffrey Dubelbeis <Mason.Dubelbeis@gmail.com>
-Date:   Wed Mar 18 14:34:27 2026 -0500
-
-    fix: event type
-
-commit dc4bf211f4ba2086ae986e0d2a754ce8af828199
-Author: Mason Jeffrey Dubelbeis <Mason.Dubelbeis@gmail.com>
-Date:   Wed Mar 18 14:33:09 2026 -0500
-
-    add: add logout button
-
-commit fa2e8c0ccf85ffb93b86639444e6b9518a453b27
-Author: Mason Jeffrey Dubelbeis <Mason.Dubelbeis@gmail.com>
-Date:   Wed Mar 18 12:37:08 2026 -0500
-
-    setup: api interceptors for req/res
-
-commit 6a8b9a04266c9e33637160c031d5866df1faca67
-Author: Mason Jeffrey Dubelbeis <Mason.Dubelbeis@gmail.com>
-Date:   Wed Mar 18 12:34:33 2026 -0500
-
-    setup: init auth for JWT
-
-commit 79c82dc4c6bb6c20565f362d7aa757481933e238
-Author: Mason Jeffrey Dubelbeis <Mason.Dubelbeis@gmail.com>
-Date:   Wed Mar 18 12:18:40 2026 -0500
-
-    setup: configured AppLayout component
-
-commit ead71d04eb58f1c0d47b11acb423471a38cf83e1
-Author: Mason Jeffrey Dubelbeis <Mason.Dubelbeis@gmail.com>
-Date:   Wed Mar 18 12:15:54 2026 -0500
-
-    bug: removed rendered comma
-
-commit 50d235e26c78f875402c3c5adc4159f7fe978b46
-Author: Mason Jeffrey Dubelbeis <Mason.Dubelbeis@gmail.com>
-Date:   Wed Mar 18 12:13:14 2026 -0500
-
-    setup: configured init pages
-
-commit f117132c69553250ad7ef90bb00fd9f9314c180a
-Author: Mason Jeffrey Dubelbeis <Mason.Dubelbeis@gmail.com>
-Date:   Wed Mar 18 12:10:40 2026 -0500
-
-    setup: configured init react routing
-
-commit 7e942304f0d727448bb39c29f4017821b5fa1e0b
-Author: Mason Jeffrey Dubelbeis <Mason.Dubelbeis@gmail.com>
-Date:   Wed Mar 18 12:09:45 2026 -0500
-
-    setup: configured react query
-
-commit 635f1141d0f36e1a9c38adb2bf002b7e0c47db8a
-Author: Mason Jeffrey Dubelbeis <Mason.Dubelbeis@gmail.com>
-Date:   Wed Mar 18 12:07:51 2026 -0500
-
-    setup: configured axios instance
-
-commit 232d0e17670804177cd6daba42bd5de01184ba5c
-Author: Mason Jeffrey Dubelbeis <Mason.Dubelbeis@gmail.com>
-Date:   Wed Mar 18 11:46:00 2026 -0500
-
-    init: project structure and dependency install
+* dfef20e (HEAD -> main, gitlab/main, gitlab/HEAD) docs: added zipped source code file
+* c3c73f9 (origin/main, origin/feat/edit-client, gitlab/feat/edit-client, feat/edit-client) feat: add client edit functionality
+* bc5a95d (origin/feat/reports, feat/reports) feat: add reports module
+* b37fd05 Docs: add Gitlog
+*   a0e9061 Merge local to Gitlab
+|\  
+| * 7342dc8 Initial commit
+*   c9b863e Merge pull request #3 from mdubelbeis/bug/create-client-form
+|\  
+| * 142ceae (origin/bug/create-client-form, bug/create-client-form) bug: return structured validation errors from backend
+|/  
+*   7161824 Merge pull request #2 from mdubelbeis/feat/delete-client
+|\  
+| * 4760e5b (origin/feat/delete-client, feat/delete-client) feat: delete Client
+|/  
+*   3dd6935 Merge pull request #1 from mdubelbeis/feat/update-client-task
+|\  
+| * 4db7f2b (origin/feat/update-client-task, feat/update-client-task) feat: add updated/complete to clients task
+| * 9ce7c5b docs: add local env
+|/  
+* c9fb8af style: add conditional color on activity type
+* 878c672 feat: placeholder for admin login
+* 23dd0a3 style: change header text color
+* 7601718 refactor: slims component down
+* 7695ebc fix: corrected route
+* d03ebf3 fix: incorrect urls
+* f971390 fix: url
+* b5ceb0e fix: invalid url
+* e18b8f0 bug: add correct url
+* 8629836 fix: refactored
+* caa4ed1 add: / in path
+* f58073b fix: url
+* 519cb23 bug: removed extra }'
+* d5c0d4e fix: url path
+* a591c7e fix: missing field
+* 0f0c3cc fix: api path
+* b033777 fix: api path
+* 5538ad8 style: add better styling
+* 242103e fix: api path
+* 818b0bb fix: corrected vercel deployment config for rewrites
+* 4817c67 fix: add Vercel config for host rewrite rule
+*   6c77988 Merge branch 'feat/user-registration'
+|\  
+| * 4b493e0 (origin/feat/user-registration, feat/user-registration) feat: add temp content to Dashboard
+| * 3f1c4b6 feat: add register user
+| * bd0cc49 Add env url data
+* | d757438 Remove optional section for recruiter-optimized README
+|/  
+* bd2b5ea fix/docs: add subheader to header element
+* d795b11 docs: updated README - current project status
+* 595bf05 docs: updated README - current project status
+* d59ca0e style: add space between links and hover effects
+* 6871984 feat: add activity to client
+* 0aad0a0 feat: add activies flow
+* 3dae81d fix: removed phone from LoginRequest
+* c6add0d feat: add error handling for duplicate clients
+* 6c1a12c feat: add AppLayout and /logout
+* 56ff13c fix: add content to return chain
+* d36f6a2 feat: POST /clients implemented
+* 446097e feat: login wrapper set up for redirects
+* 5d62ac4 fix: cleaned up component structure
+* de72d7c feat: set up protected/non-protected routes
+* 562530d fix: event type
+* dc4bf21 add: add logout button
+* fa2e8c0 setup: api interceptors for req/res
+* 6a8b9a0 setup: init auth for JWT
+* 79c82dc setup: configured AppLayout component
+* ead71d0 bug: removed rendered comma
+* 50d235e setup: configured init pages
+* f117132 setup: configured init react routing
+* 7e94230 setup: configured react query
+* 635f114 setup: configured axios instance
+* 232d0e1 init: project structure and dependency install
