@@ -5,6 +5,11 @@ import { loginUser } from '../api/auth.api';
 import { useAuth } from '../hooks/useAuth';
 import type { LoginRequest } from '../types/auth.types';
 
+const DEMO_CREDENTIALS: LoginRequest = {
+  email: 'demo@clienthub.com',
+  password: 'DemoPassword123!',
+};
+
 export default function LoginPage() {
   const navigate = useNavigate();
   const { login } = useAuth();
@@ -15,6 +20,7 @@ export default function LoginPage() {
   });
 
   const [loading, setLoading] = useState(false);
+  const [demoLoading, setDemoLoading] = useState(false);
   const [error, setError] = useState('');
 
   function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
@@ -26,13 +32,11 @@ export default function LoginPage() {
     }));
   }
 
-  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
-    e.preventDefault();
+  async function submitLogin(credentials: LoginRequest) {
     setError('');
-    setLoading(true);
 
     try {
-      const data = await loginUser(formData);
+      const data = await loginUser(credentials);
       login(data.token);
       navigate('/dashboard');
     } catch (err: unknown) {
@@ -41,10 +45,32 @@ export default function LoginPage() {
       } else {
         setError('Something went wrong.');
       }
+    }
+  }
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setLoading(true);
+
+    try {
+      await submitLogin(formData);
     } finally {
       setLoading(false);
     }
   }
+
+  async function handleDemoLogin() {
+    setDemoLoading(true);
+    setFormData(DEMO_CREDENTIALS);
+
+    try {
+      await submitLogin(DEMO_CREDENTIALS);
+    } finally {
+      setDemoLoading(false);
+    }
+  }
+
+  const isSubmitting = loading || demoLoading;
 
   return (
     <div className='rounded-3xl border border-slate-800 bg-slate-900/80 p-8 shadow-2xl shadow-black/30 backdrop-blur sm:p-10'>
@@ -73,7 +99,7 @@ export default function LoginPage() {
             value={formData.email}
             onChange={handleChange}
             required
-            placeholder='admin@clienthub.com'
+            placeholder='demo@clienthub.com'
             className='w-full rounded-xl border border-slate-700 bg-slate-950 px-4 py-3 text-sm text-white placeholder:text-slate-500 focus:border-sky-400 focus:outline-none focus:ring-4 focus:ring-sky-400/10'
           />
         </div>
@@ -92,7 +118,7 @@ export default function LoginPage() {
             value={formData.password}
             onChange={handleChange}
             required
-            placeholder='admin'
+            placeholder='DemoPassword123!'
             className='w-full rounded-xl border border-slate-700 bg-slate-950 px-4 py-3 text-sm text-white placeholder:text-slate-500 focus:border-sky-400 focus:outline-none focus:ring-4 focus:ring-sky-400/10'
           />
         </div>
@@ -105,10 +131,19 @@ export default function LoginPage() {
 
         <button
           type='submit'
-          disabled={loading}
+          disabled={isSubmitting}
           className='inline-flex w-full items-center justify-center rounded-xl bg-sky-500 px-4 py-3 text-sm font-semibold text-white transition hover:bg-sky-400 disabled:cursor-not-allowed disabled:opacity-60'
         >
           {loading ? 'Signing in...' : 'Sign in'}
+        </button>
+
+        <button
+          type='button'
+          onClick={handleDemoLogin}
+          disabled={isSubmitting}
+          className='inline-flex w-full items-center justify-center rounded-xl bg-amber-500 px-4 py-3 text-sm font-semibold text-slate-950 transition hover:bg-amber-400 disabled:cursor-not-allowed disabled:opacity-60'
+        >
+          {demoLoading ? 'Signing in as demo...' : 'Login as Demo User'}
         </button>
       </form>
 
