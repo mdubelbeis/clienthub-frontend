@@ -1,237 +1,259 @@
-# ClientHub Frontend (React CRM UI)
+# ClientHub Frontend
 
-A production-style React application that consumes a secure backend API to manage clients and track client interactions.
+React/TypeScript frontend for **ClientHub**, a full-stack CRM application that allows authenticated users to manage clients, track relationship activity, view dashboard metrics, and generate reports through a secured Spring Boot API.
 
-Built to demonstrate real-world frontend architecture, authenticated data flows, and scalable state management — not just basic CRUD.
-
----
-
-## 🎯 Why This Project Exists
-
-Most frontend projects stop at simple UI and mock data.
-
-ClientHub is different.
-
-This project focuses on:
-- Real API integration with authentication
-- Relational data (clients → activities)
-- Production patterns (React Query, routing, layouts)
-- Handling real-world edge cases (errors, auth expiry, invalid data)
-
-👉 This is the kind of application you build on a real team.
+The goal of this project is to demonstrate real frontend integration with a production-style backend: authentication, protected routes, API-driven state, form workflows, relational data, dashboard metrics, and deployment.
 
 ---
 
-## 🚀 Live Application Flow
+## Live Demo
 
-Login → Dashboard → Clients → Client Detail → Activities
+- Live Application: https://clienthub-frontend-sigma.vercel.app/login
+- Backend API: https://clienthub-api.onrender.com
+- Swagger / OpenAPI: https://clienthub-api.onrender.com/swagger-ui/index.html
 
-- Secure login with JWT
-- View and manage clients
-- Drill into a client to view activity history
-- Add new activities with instant UI updates
+### Demo Account
 
----
+```text
+Email: demo@clienthub.com
+Password: DemoPassword123!
+```
 
-## ✨ Core Features
-
-### 🔐 Authentication & Security
-- JWT-based authentication flow
-- Protected routes using React Router
-- Automatic redirect on login/logout
-- Global 401 handling (auto logout + redirect)
-- Axios interceptor injects auth headers
+The demo account includes seeded clients and activities so reviewers can immediately test the dashboard, client management, activity tracking, and report generation features.
 
 ---
 
-### 👤 Client Management
-- Fetch and display client list from API
-- Create new clients with validation
-- Real-time UI updates after creation
-- Duplicate client handling with inline error feedback
+## Tech Stack
 
----
-
-### 📋 Activity System (Relational Data)
-- Activities tied to a specific client
-- Fetch activities per client context
-- Create new activities with automatic cache refresh
-- Clean separation of client → activity relationship in UI
-
----
-
-### ⚡ State Management (React Query)
-- Server state handled via React Query
-- Automatic caching and background refetching
-- Query invalidation for real-time updates
-- No manual state syncing or page reloads
-
----
-
-### 🧠 UX & Error Handling
-- Loading and error states handled across views
-- Inline form validation and feedback
-- Graceful handling of API failures
-- Clean navigation flow across protected routes
-
----
-
-## 🧱 Tech Stack
-
-### Frontend Core
-- React (Vite)
+- React
 - TypeScript
-- React Router v6
-
-### State & Data
-- React Query (TanStack Query)
-- Axios
-
-### UI & Styling
-- Tailwind CSS
-
-### Tooling
 - Vite
-- ESLint
-- Prettier
+- React Router
+- TanStack Query / React Query
+- Axios
+- Tailwind CSS
+- Vercel
 
 ---
 
-## 🏗️ Architecture Highlights
+## Core Features
 
-### 🔁 Data Flow
-
-API → React Query → Custom Hooks → UI Components
+- JWT-based login flow
+- Demo login button
+- Protected routes
+- Authenticated API requests with Axios
+- Dashboard with real backend-powered metrics
+- Client listing and management
+- Client detail pages
+- Client activity timeline
+- Activity creation, editing, and completion workflow
+- Searchable client and activity reports
+- Loading, error, and empty states
+- Production deployment on Vercel
 
 ---
 
-### 📁 Project Structure
+## Application Flow
 
+```text
+Login
+  ↓
+Dashboard
+  ↓
+Clients
+  ↓
+Client Detail
+  ↓
+Activities
+  ↓
+Reports
+```
+
+The frontend communicates with a secured backend API and uses the authenticated user's JWT token to access protected CRM data.
+
+---
+
+## Architecture
+
+```text
+React Pages
+   ↓
+Feature Components / Forms
+   ↓
+React Query Hooks
+   ↓
+Axios API Layer
+   ↓
+Spring Boot REST API
+```
+
+### Key Design Points
+
+- Route-level pages are separated from reusable components.
+- API calls are isolated in the `api` layer.
+- TypeScript models define frontend data contracts.
+- React Query manages server state, caching, and refetching.
+- Axios handles authenticated requests.
+- Protected routes prevent unauthenticated access to CRM pages.
+- The dashboard uses real backend metrics instead of hardcoded placeholder values.
+
+---
+
+## Project Structure
+
+```text
 src/
-├── api/                # API layer (axios + endpoints)
-├── features/           # Feature-based logic (React Query hooks)
-├── components/         # Reusable UI components
-├── components/forms/   # Form components
-├── pages/              # Route-level pages
-├── context/            # Auth state management
-├── types/              # TypeScript models
+├── api/          # Axios instance and API endpoint functions
+├── components/   # Reusable UI components
+├── context/      # Authentication context
+├── hooks/        # Custom hooks
+├── pages/        # Route-level pages
+├── types/        # TypeScript data types
+└── main.tsx      # Application entry point
+```
 
 ---
 
-### 🔐 Authentication Flow
+## Main Pages
 
-Login → Store JWT → Attach to Requests → Access Protected Routes
+### Login
 
-- Token persisted in localStorage
-- Axios interceptor handles auth automatically
-- 401 responses trigger logout + redirect
+- Allows users to sign in with email and password
+- Includes one-click demo login
+- Stores JWT after successful authentication
+- Redirects authenticated users to the dashboard
+
+### Dashboard
+
+Displays real user-scoped CRM metrics from the backend:
+
+- total clients
+- total activities
+- open activities
+- completed activities
+- recent activity
+
+### Clients
+
+- Displays the authenticated user's clients
+- Supports creating, editing, deleting, and viewing client records
+- Shows validation and API error feedback
+
+### Client Detail
+
+- Displays selected client information
+- Shows activity history for the selected client
+- Supports creating, editing, and completing activities
+
+### Reports
+
+- Allows users to generate client and activity reports
+- Supports searchable report results from the backend
 
 ---
 
-## 🔄 Routing Structure
+## Environment Setup
 
-/                → Login
-/dashboard       → Dashboard (protected)
-/clients         → Client list
-/clients/:id     → Client detail + activities
+Create a `.env` file in the project root:
 
-- `ProtectedRoute` enforces authentication
-- `AppLayout` provides consistent UI shell
-- `<Outlet />` used for nested routing
-
----
-
-## 🧪 Real Problems Solved
-
-This project intentionally handles real-world issues:
-
-- Preventing duplicate client creation
-- Handling expired authentication tokens
-- Syncing UI with server state after mutations
-- Managing relational data across multiple views
-- Avoiding unnecessary re-renders and refetches
-
----
-
-## ⚙️ Environment Setup
-
-Create a `.env` file:
-
+```text
 VITE_API_BASE_URL=http://localhost:8080
+```
+
+For production, Vercel uses the deployed backend URL:
+
+```text
+VITE_API_BASE_URL=https://clienthub-api.onrender.com
+```
 
 ---
 
-## ▶️ Run Locally
+## Run Locally
+
+Install dependencies:
 
 ```bash
 npm install
+```
+
+Start the development server:
+
+```bash
 npm run dev
 ```
-⸻
 
-## 🔌 Backend Dependency
+Local frontend URL:
 
-This frontend consumes a secured REST API that provides:
-	•	JWT authentication
-	•	Client management endpoints
-	•	Activity tracking endpoints
-
-Backend repository available separately if needed.
-
-⸻
-
-## 🚧 Future Enhancements
-
-### Product Features
-	•	Edit/update client
-	•	Delete activities
-	•	Client search and filtering
-	•	Pagination controls
-
-⸻
-
-### UX Improvements
-	•	Toast notifications (success/error)
-	•	Loading skeletons
-	•	Improved visual design (cards/tables)
-	•	Better empty states
-
-⸻
-
-### Engineering Improvements
-	•	React Hook Form + Zod validation
-	•	Stronger API typing
-	•	Global error handling abstraction
-	•	E2E and integration testing
-
-⸻
-
-## 💡 What This Project Demonstrates
-	•	Building a real frontend against a secured API
-	•	Managing server state correctly (not just local state)
-	•	Implementing authentication flows end-to-end
-	•	Structuring scalable React applications
-	•	Handling relational data in the UI layer
-
-⸻
-
-## 📌 Status
-
-🚧 Actively Improving
-Core functionality complete. Currently refining UX and adding advanced features.
-
-⸻
-
-## 👨‍💻 Author
-
-Mason Dubelbeis
-	•	GitHub: https://github.com/mdubelbeis
-	•	Portfolio: https://www.masondubelbeis.com
-
-⸻
-
-## 🧠 Final Thought
-
-This project is intentionally built to reflect how real applications are structured in production — focusing on architecture, data flow, and maintainability rather than just visuals.
+```text
+http://localhost:5173
+```
 
 ---
+
+## Backend Dependency
+
+This frontend consumes the ClientHub Spring Boot API.
+
+The backend provides:
+
+- JWT authentication
+- protected client endpoints
+- protected activity endpoints
+- dashboard summary endpoint
+- report generation endpoint
+- validation and structured error responses
+
+Backend repository: ClientHub API
+
+---
+
+## Deployment
+
+The frontend is deployed on **Vercel**.
+
+The backend is deployed separately on **Render**, with PostgreSQL hosted through Render.
+
+Frontend production configuration requires:
+
+```text
+VITE_API_BASE_URL=https://clienthub-api.onrender.com
+```
+
+---
+
+## Future Enhancements
+
+- Improved toast notifications
+- Loading skeletons
+- Stronger form validation with React Hook Form and Zod
+- Improved report UI
+- Client search and filtering controls
+- Pagination controls
+- E2E testing with Playwright or Cypress
+- Expanded frontend test coverage
+
+---
+
+## Project Purpose
+
+ClientHub Frontend was built to demonstrate how a React application interacts with a secured backend API in a realistic business application.
+
+It demonstrates:
+
+- authenticated frontend workflows
+- protected routing
+- API integration
+- server-state management
+- relational data handling
+- dashboard rendering from real backend metrics
+- deployment-ready frontend configuration
+- maintainable React project structure
+
+---
+
+## Author
+
+Mason Dubelbeis
+
+- GitHub: https://github.com/mdubelbeis
+- Portfolio: https://www.masondubelbeis.com
